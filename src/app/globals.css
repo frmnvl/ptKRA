@@ -1,0 +1,592 @@
+/* src/app/globals.css - Fixed for Tailwind CSS v4 */
+
+@import "tailwindcss";
+
+@theme {
+  /* Base colors from CSS variables */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Custom Corporate Colors */
+  --color-navy: #1E3A8A;
+  --color-navy-dark: #1E40AF;
+  --color-navy-light: #3B82F6;
+  --color-navy-accent: #60A5FA;
+
+  --color-charcoal: #1F2937;
+  --color-charcoal-dark: #111827;
+  --color-charcoal-light: #374151;
+
+  --color-amber: #F59E0B;
+  --color-amber-dark: #D97706;
+  --color-amber-light: #FCD34D;
+  --color-amber-accent: #FEF3C7;
+
+  --color-teal: #0D9488;
+  --color-teal-dark: #0F766E;
+  --color-teal-light: #14B8A6;
+  --color-teal-accent: #5EEAD4;
+
+  --color-gold: #CA8A04;
+  --color-gold-dark: #A16207;
+  --color-gold-light: #EAB308;
+
+  --color-maroon: #7C2D12;
+  --color-maroon-dark: #92400E;
+  --color-maroon-light: #C2410C;
+
+  --color-steel: #4B5563;
+  --color-steel-light: #6B7280;
+
+  /* Animation keyframes */
+  --animate-slide-up: slideInUp 0.6s ease-out;
+  --animate-fade-scale: fadeInScale 0.5s ease-out;
+  --animate-shimmer: shimmer 3s linear infinite;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-corporate-float: corporate-float 6s ease-in-out infinite;
+  --animate-blob: blob 7s infinite;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Professional Corporate Color Palette */
+  --background: #FEFEFE;
+  --foreground: #1A202C;
+  --card: #FFFFFF;
+  --card-foreground: #1A202C;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A202C;
+  --primary: #1E3A8A;
+  --primary-foreground: #FFFFFF;
+  --secondary: #374151;
+  --secondary-foreground: #FFFFFF;
+  --muted: #F8FAFC;
+  --muted-foreground: #6B7280;
+  --accent: #F59E0B;
+  --accent-foreground: #FFFFFF;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #F9FAFB;
+  --ring: #1E3A8A;
+
+  /* Enhanced Professional Corporate Colors */
+  --navy: #1E3A8A;
+  --navy-dark: #1E40AF;
+  --navy-light: #3B82F6;
+  --navy-accent: #60A5FA;
+
+  --charcoal: #1F2937;
+  --charcoal-dark: #111827;
+  --charcoal-light: #374151;
+
+  --amber: #F59E0B;
+  --amber-dark: #D97706;
+  --amber-light: #FCD34D;
+  --amber-accent: #FEF3C7;
+
+  --teal: #0D9488;
+  --teal-dark: #0F766E;
+  --teal-light: #14B8A6;
+  --teal-accent: #5EEAD4;
+
+  --gold: #CA8A04;
+  --gold-dark: #A16207;
+  --gold-light: #EAB308;
+
+  --maroon: #7C2D12;
+  --maroon-dark: #92400E;
+  --maroon-light: #C2410C;
+
+  --steel: #4B5563;
+  --steel-light: #6B7280;
+
+  --success: #10B981;
+  --warning: #F59E0B;
+  --info: #3B82F6;
+  --error: #EF4444;
+}
+
+.dark {
+  --background: #0F172A;
+  --foreground: #F8FAFC;
+  --card: #1E293B;
+  --card-foreground: #F8FAFC;
+  --popover: #1E293B;
+  --popover-foreground: #F8FAFC;
+  --primary: #60A5FA;
+  --primary-foreground: #FFFFFF;
+  --secondary: #475569;
+  --secondary-foreground: #FFFFFF;
+  --muted: #334155;
+  --muted-foreground: #94A3B8;
+  --accent: #FCD34D;
+  --accent-foreground: #1F2937;
+  --destructive: #F87171;
+  --destructive-foreground: #FFFFFF;
+  --border: #334155;
+  --input: #334155;
+  --ring: #60A5FA;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "cv11", "ss01";
+    font-variation-settings: "opsz" auto;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Professional Corporate Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(30, 58, 138, 0.5);
+  }
+}
+
+@keyframes corporate-float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  33% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+
+  66% {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/* Animation utilities */
+.animate-slide-up {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.animate-fade-scale {
+  animation: fadeInScale 0.5s ease-out;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-corporate-float {
+  animation: corporate-float 6s ease-in-out infinite;
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Enhanced Professional Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #1E3A8A 0%, #F59E0B 50%, #0D9488 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+.gradient-text-navy {
+  background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 50%, #60A5FA 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Professional Glass Effects */
+.glass {
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(30, 58, 138, 0.1);
+}
+
+.glass-navy {
+  backdrop-filter: blur(12px);
+  background: rgba(30, 58, 138, 0.1);
+  border: 1px solid rgba(30, 58, 138, 0.2);
+}
+
+.glass-amber {
+  backdrop-filter: blur(12px);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* Enhanced Professional Card Styles */
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(30, 58, 138, 0.08);
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(30, 58, 138, 0.15);
+  border-color: rgba(30, 58, 138, 0.3);
+}
+
+/* Professional Corporate Button Styles */
+.btn-navy {
+  background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.3);
+  border: none;
+}
+
+.btn-navy:hover {
+  background: linear-gradient(135deg, #1E40AF 0%, #2563EB 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(30, 58, 138, 0.4);
+}
+
+.btn-amber {
+  background: linear-gradient(135deg, #F59E0B 0%, #FCD34D 100%);
+  color: #1F2937;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, 0.3);
+  border: none;
+}
+
+.btn-amber:hover {
+  background: linear-gradient(135deg, #D97706 0%, #F59E0B 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+}
+
+.btn-teal {
+  background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.3);
+  border: none;
+}
+
+.btn-teal:hover {
+  background: linear-gradient(135deg, #0F766E 0%, #0D9488 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(13, 148, 136, 0.4);
+}
+
+.btn-ghost-navy {
+  border: 2px solid #1E3A8A;
+  color: #1E3A8A;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-ghost-navy:hover {
+  background: #1E3A8A;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+}
+
+/* Professional Background Gradients */
+.bg-gradient-warm {
+  background: linear-gradient(135deg, #FEF3C7 0%, #FED7AA 50%, #FEF3C7 100%);
+}
+
+.bg-gradient-cool {
+  background: linear-gradient(135deg, #DBEAFE 0%, #E0F2FE 50%, #DBEAFE 100%);
+}
+
+.gradient-mesh {
+  background-image:
+    radial-gradient(at 20% 80%, rgba(30, 58, 138, 0.12) 0px, transparent 50%),
+    radial-gradient(at 80% 20%, rgba(13, 148, 136, 0.10) 0px, transparent 50%),
+    radial-gradient(at 40% 40%, rgba(245, 158, 11, 0.08) 0px, transparent 50%),
+    radial-gradient(at 90% 90%, rgba(124, 45, 18, 0.10) 0px, transparent 50%);
+}
+
+/* Fixed Color Utilities */
+.text-navy {
+  color: #1E3A8A !important;
+}
+
+.text-navy-light {
+  color: #3B82F6 !important;
+}
+
+.text-navy-dark {
+  color: #1E40AF !important;
+}
+
+.text-charcoal {
+  color: #1F2937 !important;
+}
+
+.text-charcoal-light {
+  color: #374151 !important;
+}
+
+.text-charcoal-dark {
+  color: #111827 !important;
+}
+
+.text-amber {
+  color: #F59E0B !important;
+}
+
+.text-amber-dark {
+  color: #D97706 !important;
+}
+
+.text-amber-light {
+  color: #FCD34D !important;
+}
+
+.text-teal {
+  color: #0D9488 !important;
+}
+
+.text-teal-dark {
+  color: #0F766E !important;
+}
+
+.text-teal-light {
+  color: #14B8A6 !important;
+}
+
+.text-maroon {
+  color: #7C2D12 !important;
+}
+
+.text-maroon-dark {
+  color: #92400E !important;
+}
+
+.text-steel {
+  color: #4B5563 !important;
+}
+
+.text-steel-light {
+  color: #6B7280 !important;
+}
+
+.text-gold {
+  color: #CA8A04 !important;
+}
+
+.text-gold-dark {
+  color: #A16207 !important;
+}
+
+.bg-navy {
+  background-color: #1E3A8A !important;
+}
+
+.bg-navy-light {
+  background-color: #3B82F6 !important;
+}
+
+.bg-amber {
+  background-color: #F59E0B !important;
+}
+
+.bg-teal {
+  background-color: #0D9488 !important;
+}
+
+.bg-maroon {
+  background-color: #7C2D12 !important;
+}
+
+.bg-steel {
+  background-color: #4B5563 !important;
+}
+
+/* Background gradients for components */
+.from-navy {
+  --tw-gradient-from: #1E3A8A !important;
+}
+
+.to-navy-dark {
+  --tw-gradient-to: #1E40AF !important;
+}
+
+.from-amber {
+  --tw-gradient-from: #F59E0B !important;
+}
+
+.to-amber-dark {
+  --tw-gradient-to: #D97706 !important;
+}
+
+.from-teal {
+  --tw-gradient-from: #0D9488 !important;
+}
+
+.to-teal-dark {
+  --tw-gradient-to: #0F766E !important;
+}
+
+.from-maroon {
+  --tw-gradient-from: #7C2D12 !important;
+}
+
+.to-maroon-dark {
+  --tw-gradient-to: #92400E !important;
+}
+
+/* Enhanced Professional Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1E3A8A 0%, #F59E0B 100%);
+  border-radius: 4px;
+  border: 1px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #1E40AF 0%, #D97706 100%);
+}
+
+::selection {
+  background: rgba(30, 58, 138, 0.2);
+  color: var(--foreground);
+}
+
+:focus-visible {
+  outline: 2px solid #1E3A8A;
+  outline-offset: 2px;
+}
+
+/* Line clamp utilities */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
